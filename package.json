@@ -1,7 +1,7 @@
 {
     "name": "@danimal4326/homebridge-weather-plus",
     "displayName": "Weather Plus",
-    "version": "3.3.7",
+    "version": "3.3.8",
     "description": "A comprehensive weather plugin for homekit with current observations, forecasts and history.",
     "license": "MIT",
     "keywords": [
@@ -111,7 +111,7 @@
         "url": "git+https://github.com/Danimal4326/homebridge-weather-plus.git"
     },
     "dependencies": {
-        "fakegato-history": "^0.6.4",
+        "fakegato-history": "^0.6.5",
         "geo-tz": "^6.0.0",
         "moment-timezone": "^0.5.28",
         "underscore": "^1.13.6",
