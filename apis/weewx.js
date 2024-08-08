@@ -282,24 +282,24 @@ class WeewxAPI
                 values = observation.uk_hybrid;
             }
             const timezone = String(geoTz(parseFloat(observation.lat), parseFloat(observation.lon)));
-            report.ObservationStation = observation.stationID;
-            report.RainBool = observation.rainbool;
-            report.ObservationTime = moment.unix(observation.epoch).tz(timezone).format('HH:mm:ss');      
-            report.WindDirection = converter.getWindDirection(isNaN(parseInt(observation.winddir)) ? 0 : parseInt(observation.winddir));
-            report.Humidity = isNaN(observation.humidity) ? 0 : observation.humidity;
-            report.SolarRadiation = isNaN(observation.solarRadiation) ? 0 : observation.solarRadiation;
-            report.LightLevel = isNaN(observation.solarRadiation) ? 0 : ( observation.solarRadiation * 126.7 );
-            report.UVIndex = isNaN(observation.uv) ? 0 : observation.uv;
-            report.Ozone = isNaN(observation.ozone) ? 0 : observation.ozone;
-            report.Temperature = isNaN(values.temp) ? 0 : values.temp;
-            report.DewPoint = isNaN(values.dewpt) ? 0 : values.dewpt;
-            report.StatusLowBattery = isNaN(observation.batteryLow) ? 0 : observation.batteryLow;
             report.AirPressure = isNaN(values.pressure) ? 0 : values.pressure;
+            report.DewPoint = isNaN(values.dewpt) ? 0 : values.dewpt;
+            report.Humidity = isNaN(observation.humidity) ? 0 : observation.humidity;
+            report.LightLevel = isNaN(observation.solarRadiation) ? 0 : ( observation.solarRadiation * 126.7 );
+            report.ObservationStation = observation.stationID;
+            report.ObservationTime = moment.unix(observation.epoch).tz(timezone).format('HH:mm:ss');
+            report.Ozone = isNaN(observation.ozone) ? 0 : observation.ozone;
+            report.Rain1h = isNaN(values.rain1h) ? 0 : values.rain1h;
+            report.RainBool = observation.rainbool;
+            report.RainDay = isNaN(values.rainday) ? 0 : values.rainday;
+            report.SolarRadiation = isNaN(observation.solarRadiation) ? 0 : observation.solarRadiation;
+            report.StatusLowBattery = isNaN(observation.batteryLow) ? 0 : observation.batteryLow;
             report.TemperatureApparent = isNaN(values.apptemp) ? 0 : values.apptemp;
+            report.Temperature = isNaN(values.temp) ? 0 : values.temp;
+            report.UVIndex = isNaN(observation.uv) ? 0 : observation.uv;
+            report.WindDirection = converter.getWindDirection(isNaN(parseInt(observation.winddir)) ? 0 : parseInt(observation.winddir));
             report.WindSpeed = isNaN(values.windSpeed) ? 0 : values.windSpeed;
             report.WindSpeedMax = isNaN(values.windGust) ? 0 : values.windGust;
-            report.Rain1h = isNaN(values.rain1h) ? 0 : values.rain1h;
-            report.RainDay = isNaN(values.rainday) ? 0 : values.rainday;
 
         } catch (error)
         {
