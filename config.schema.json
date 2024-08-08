@@ -212,6 +212,10 @@
             "type": "boolean",
             "default": false
           },
+          "extraLightLevel": {
+            "type": "boolean",
+            "default": false
+          },
           "hidden": {
             "type": "array",
             "items": {
@@ -343,7 +347,7 @@
                 "functionBody": "return model.stations[arrayIndices[0]].service === 'openweathermap'"
               }
             },
-			{
+            {
               "type": "help",
               "helpvalue": "<h6>City</h6><p class='help-block'>City only needed with Tempest when Eve app is used with multiple weather stations (same or different homes)</a>.</p>",
               "condition": {
@@ -400,7 +404,7 @@
               "title": "Daily weather report language",
               "condition": {
                 "functionBody": "return model.stations[arrayIndices[0]].service != 'weewx'"
-              }  
+              }
             },
             {
               "key": "stations[].compatibility"
@@ -479,6 +483,14 @@
                   "key": "stations[].extraHumidity",
                   "title": "Separate humidity",
                   "description": "Separate humidity from the weather accessory to an own accessory.",
+                  "condition": {
+                    "functionBody": "return model.stations[arrayIndices[0]].compatibility === 'eve' ||  model.stations[arrayIndices[0]].compatibility === 'both'"
+                  }
+                },
+                {
+                  "key": "stations[].extraLightLevel",
+                  "title": "Separate light level",
+                  "description": "Separate light level from the weather accessory to an own accessory.",
                   "condition": {
                     "functionBody": "return model.stations[arrayIndices[0]].compatibility === 'eve' ||  model.stations[arrayIndices[0]].compatibility === 'both'"
                   }

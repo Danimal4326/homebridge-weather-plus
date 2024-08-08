@@ -1,126 +1,126 @@
 {
-  "name": "homebridge-weather-plus",
-  "displayName": "Weather Plus",
-  "version": "3.3.5",
-  "description": "A comprehensive weather plugin for homekit with current observations, forecasts and history.",
-  "license": "MIT",
-  "keywords": [
-    "homebridge-plugin",
-    "weather-station",
-    "weather",
-    "weather forecast",
-    "forecast",
-    "observations",
-    "history",
-    "weather history",
-    "Air Pressure",
-    "Cloud Cover",
-    "Condition",
-    "Condition Category",
-    "Dew Point",
-    "Humidity",
-    "Ozone",
-    "Rain Chance",
-    "Rain Last Hour",
-    "Rain All Day",
-    "Solar Radiation",
-    "Sunrise",
-    "Sunset",
-    "Temperature",
-    "Temperature Min",
-    "Temperature Max",
-    "Temperature Apparent",
-    "UV-Index",
-    "Visibility",
-    "Wind Direction",
-    "Wind Speed",
-    "Wind Speed Maximum",
-    "Observation Time",
-    "Observation Station",
-    "openweather",
-    "openweathermap",
-    "weather underground",
-    "tempest weather station",
-    "weatherflow weather station"
-  ],
-  "engines": {
-    "node": ">=10.0.0",
-    "homebridge": ">=1.0.0"
-  },
-  "author": {
-    "name": "Arne Blumentritt",
-    "email": "arne.blumentritt@gmail.com",
-    "url": "https://github.com/naofireblade"
-  },
-  "contributors": [
-    {
-      "name": "Kevin Harwood",
-      "url": "https://github.com/kcharwood"
+    "name": "homebridge-weather-plus",
+    "displayName": "Weather Plus",
+    "version": "3.3.6",
+    "description": "A comprehensive weather plugin for homekit with current observations, forecasts and history.",
+    "license": "MIT",
+    "keywords": [
+        "homebridge-plugin",
+        "weather-station",
+        "weather",
+        "weather forecast",
+        "forecast",
+        "observations",
+        "history",
+        "weather history",
+        "Air Pressure",
+        "Cloud Cover",
+        "Condition",
+        "Condition Category",
+        "Dew Point",
+        "Humidity",
+        "Ozone",
+        "Rain Chance",
+        "Rain Last Hour",
+        "Rain All Day",
+        "Solar Radiation",
+        "Sunrise",
+        "Sunset",
+        "Temperature",
+        "Temperature Min",
+        "Temperature Max",
+        "Temperature Apparent",
+        "UV-Index",
+        "Visibility",
+        "Wind Direction",
+        "Wind Speed",
+        "Wind Speed Maximum",
+        "Observation Time",
+        "Observation Station",
+        "openweather",
+        "openweathermap",
+        "weather underground",
+        "tempest weather station",
+        "weatherflow weather station"
+    ],
+    "engines": {
+        "node": ">=10.0.0",
+        "homebridge": ">=1.0.0"
     },
-    {
-      "name": "simont77",
-      "url": "https://github.com/simont77"
+    "author": {
+        "name": "Arne Blumentritt",
+        "email": "arne.blumentritt@gmail.com",
+        "url": "https://github.com/naofireblade"
     },
-    {
-      "name": "GatoPharaoh",
-      "url": "https://github.com/GatoPharaoh"
+    "contributors": [
+        {
+            "name": "Kevin Harwood",
+            "url": "https://github.com/kcharwood"
+        },
+        {
+            "name": "simont77",
+            "url": "https://github.com/simont77"
+        },
+        {
+            "name": "GatoPharaoh",
+            "url": "https://github.com/GatoPharaoh"
+        },
+        {
+            "name": "David Werth",
+            "url": "https://github.com/werthdavid"
+        },
+        {
+            "name": "Marshall T. Rose",
+            "url": "https://github.com/mrose17"
+        },
+        {
+            "name": "Bill Waggoner",
+            "url": "https://github.com/ctgreybeard"
+        },
+        {
+            "name": "Russell Sonnenschein",
+            "url": "https://github.com/ctgreybeard"
+        },
+        {
+            "name": "Angela Herring",
+            "url": "https://github.com/angelaherring"
+        },
+        {
+            "name": "CHAMLEX",
+            "url": "https://github.com/CHAMLEX"
+        },
+        {
+            "name": "Zerosignal84",
+            "url": "https://github.com/Zerosignal84"
+        },
+        {
+            "name": "Vincent Niehues",
+            "url": "https://github.com/vniehues"
+        },
+        {
+            "name": "Hendrik-Cv",
+            "url": "https://github.com/Hendrik-Cv"
+        },
+        {
+            "name": "David Carson",
+            "url": "https://github.com/dacarson"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/naofireblade/homebridge-weather-plus.git"
     },
-    {
-      "name": "David Werth",
-      "url": "https://github.com/werthdavid"
+    "dependencies": {
+        "fakegato-history": "^0.6.4",
+        "geo-tz": "^6.0.0",
+        "moment-timezone": "^0.5.28",
+        "underscore": "^1.13.6",
+        "request": "^2.88.2",
+        "weather-formulas": "^1",
+        "node-persist": "^2.1.0"
     },
-    {
-      "name": "Marshall T. Rose",
-      "url": "https://github.com/mrose17"
-    },
-    {
-      "name": "Bill Waggoner",
-      "url": "https://github.com/ctgreybeard"
-    },
-    {
-      "name": "Russell Sonnenschein",
-      "url": "https://github.com/ctgreybeard"
-    },
-    {
-      "name": "Angela Herring",
-      "url": "https://github.com/angelaherring"
-    },
-    {
-      "name": "CHAMLEX",
-      "url": "https://github.com/CHAMLEX"
-    },
-    {
-      "name": "Zerosignal84",
-      "url": "https://github.com/Zerosignal84"
-    },
-    {
-      "name": "Vincent Niehues",
-      "url": "https://github.com/vniehues"
-    },
-    {
-      "name": "Hendrik-Cv",
-      "url": "https://github.com/Hendrik-Cv"
-    },
-	{
-      "name": "David Carson",
-      "url": "https://github.com/dacarson"
+    "funding": {
+        "type": "buymeacoffee",
+        "url": "https://buymeacoffee.com/naofireblade"
     }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/naofireblade/homebridge-weather-plus.git"
-  },
-  "dependencies": {
-    "fakegato-history": "^0.6.4",
-    "geo-tz": "^6.0.0",
-    "moment-timezone": "^0.5.28",
-    "underscore": "^1.13.6",
-    "request": "^2.88.2",
-    "weather-formulas": "^1",
-    "node-persist": "^2.1.0"
-  },
-  "funding": {
-    "type": "buymeacoffee",
-    "url": "https://buymeacoffee.com/naofireblade"
-  }
 }
