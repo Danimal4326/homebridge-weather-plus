@@ -231,7 +231,7 @@ WeatherPlusPlatform.prototype = {
         for (let i = 0; i < station.hidden.length; i++)
         {
             let hide = station.hidden[i];
-            station.hidden[i] = hide === "Rain" || hide === "Snow" ? hide + "Bool" : hide.replace(" ","");
+            station.hidden[i] = hide === "Rain" || hide === "Snow" ? hide + "Bool" : hide.replaceAll(" ","");
         }
         this.log.debug(station.hidden);
         station.serial = station.service + " - " + (station.locationId || '') + (station.locationGeo || '') + (station.locationCity || '');
@@ -269,13 +269,21 @@ WeatherPlusPlatform.prototype = {
                                                 });
 
                                             this.log.debug("Saving history entry");
-                                            accessory.historyService.addEntry({
+
+                                            let hist_values = {
                                                 time: new Date().getTime() / 1000,
-                                                temp: accessory.CurrentConditionsService.getCharacteristic(Characteristic.CurrentTemperature).value,
-                                                pressure: accessory.AirPressureService ? accessory.AirPressureService.value : accessory.CurrentConditionsService.getCharacteristic(CustomCharacteristic.AirPressure).value,
-                                                humidity: accessory.HumidityService ? accessory.HumidityService.getCharacteristic(Characteristic.CurrentRelativeHumidity).value : accessory.CurrentConditionsService.getCharacteristic(Characteristic.CurrentRelativeHumidity).value,
-                                                lux: accessory.LightLevelService ? accessory.LightLevelService.getCharacteristic(Characteristic.CurrentAmbientLightLevel).value : accessory.CurrentConditionsService.getCharacteristic(Characteristic.CurrentAmbientLightLevel).value
-                                            });
+                                                temp: accessory.CurrentConditionsService.getCharacteristic(Characteristic.CurrentTemperature).value
+                                            }
+                                            if (accessory.config.hidden.indexOf("AirPressure") === -1 ) {
+                                               hist_values.pressure = accessory.AirPressureService ? accessory.AirPressureService.value : accessory.CurrentConditionsService.getCharacteristic(CustomCharacteristic.AirPressure).value;
+                                            }
+                                            if (accessory.config.hidden.indexOf("Humidity") === -1 ) {
+                                                hist_values.humidity = accessory.HumidityService ? accessory.HumidityService.getCharacteristic(Characteristic.CurrentRelativeHumidity).value : accessory.CurrentConditionsService.getCharacteristic(Characteristic.CurrentRelativeHumidity).value;
+                                            }
+                                            if (accessory.config.hidden.indexOf("LightLevel") === -1 ) {
+                                                hist_values.lux = accessory.LightLevelService ? accessory.LightLevelService.getCharacteristic(Characteristic.CurrentAmbientLightLevel).value : accessory.CurrentConditionsService.getCharacteristic(Characteristic.CurrentAmbientLightLevel).value;
+                                            }
+                                            accessory.historyService.addEntry(hist_values);
                                         } catch (error2)
                                         {
                                             this.log.error("Exception while parsing weather report: " + error2);
