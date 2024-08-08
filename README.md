@@ -1,8 +1,8 @@
 # homebridge-weather-plus
 [![npm](https://img.shields.io/npm/v/homebridge-weather-plus.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-weather-plus)
 [![npm](https://img.shields.io/npm/dt/homebridge-weather-plus.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-weather-plus)
-[![GitHub last commit](https://img.shields.io/github/last-commit/naofireblade/homebridge-weather-plus.svg?style=flat-square)](https://github.com/naofireblade/homebridge-weather-plus)
-[![Weather](https://img.shields.io/badge/weather-sunny-edd100.svg?style=flat-square)](https://github.com/naofireblade/homebridge-weather-plus)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Danimal4326/homebridge-weather-plus.svg?style=flat-square)](https://github.com/Danimal4326/homebridge-weather-plus)
+[![Weather](https://img.shields.io/badge/weather-sunny-edd100.svg?style=flat-square)](https://github.com/Danimal4326/homebridge-weather-plus)
 
 This is a weather plugin for [homebridge](https://github.com/nfarina/homebridge) that features current observations, daily forecasts and history graphs for multiple locations and services. You can download it via [npm](https://www.npmjs.com/package/homebridge-weather-plus).  
 
@@ -11,9 +11,9 @@ This is a weather plugin for [homebridge](https://github.com/nfarina/homebridge)
 
 If you like this plugin and find it useful, I would be forever grateful for your support:
 
-<a href="https://www.buymeacoffee.com/naofireblade" target="_blank"><img width="140" src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee"></a>
+<a href="https://www.buymeacoffee.com/danimal4326" target="_blank"><img width="140" src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee"></a>
 
-Feel free to leave any feedback [here](https://github.com/naofireblade/homebridge-weather-plus/issues).
+Feel free to leave any feedback [here](https://github.com/Danimal4326/homebridge-weather-plus/issues).
 
 ## Features
 - Get [27 observation and forecast](#observations-and-forecasts) values for up to 7 days
