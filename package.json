@@ -1,5 +1,5 @@
 {
-    "name": "homebridge-weather-plus",
+    "name": "@danimal4326/homebridge-weather-plus",
     "displayName": "Weather Plus",
     "version": "3.3.6",
     "description": "A comprehensive weather plugin for homekit with current observations, forecasts and history.",
@@ -47,10 +47,7 @@
         "node": ">=10.0.0",
         "homebridge": ">=1.0.0"
     },
-    "author": {
-        "name": "Dan Chlopek",
-        "url": "https://github.com/Danimal4326"
-    },
+    "author": "Dan Chlopek (https://github.com/Danimal4326)",
     "contributors": [
         {
             "name": "Arne Blumentritt",
@@ -111,7 +108,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/Danimal4326/homebridge-weather-plus.git"
+        "url": "git+https://github.com/Danimal4326/homebridge-weather-plus.git"
     },
     "dependencies": {
         "fakegato-history": "^0.6.4",
@@ -121,5 +118,10 @@
         "request": "^2.88.2",
         "weather-formulas": "^1",
         "node-persist": "^2.1.0"
-    }
+    },
+    "main": "index.js",
+    "bugs": {
+        "url": "https://github.com/Danimal4326/homebridge-weather-plus/issues"
+    },
+    "homepage": "https://github.com/Danimal4326/homebridge-weather-plus#readme"
 }
