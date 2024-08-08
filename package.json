@@ -48,11 +48,14 @@
         "homebridge": ">=1.0.0"
     },
     "author": {
-        "name": "Arne Blumentritt",
-        "email": "arne.blumentritt@gmail.com",
-        "url": "https://github.com/naofireblade"
+        "name": "Dan Chlopek",
+        "url": "https://github.com/Danimal4326"
     },
     "contributors": [
+        {
+            "name": "Arne Blumentritt",
+            "url": "https://github.com/naofireblade"
+        },
         {
             "name": "Kevin Harwood",
             "url": "https://github.com/kcharwood"
@@ -108,7 +111,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/naofireblade/homebridge-weather-plus.git"
+        "url": "https://github.com/Danimal4326/homebridge-weather-plus.git"
     },
     "dependencies": {
         "fakegato-history": "^0.6.4",
@@ -118,9 +121,5 @@
         "request": "^2.88.2",
         "weather-formulas": "^1",
         "node-persist": "^2.1.0"
-    },
-    "funding": {
-        "type": "buymeacoffee",
-        "url": "https://buymeacoffee.com/naofireblade"
     }
 }
