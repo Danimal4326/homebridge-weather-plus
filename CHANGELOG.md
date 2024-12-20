@@ -301,3 +301,11 @@
 * Fix issue with threshold triggers and WeatherUnderground. In 3.3.4, WeatherUnderground API call was modified and incorrectly return values in km, and km/h. 
 * Fix punycode deprication warning and util._extend warning.
 * Move off depricated request package and moved to axios package for all URL loading.
+## 3.3.7
+* Fixed LightLevel in WeeWX
+* Cleanup of code (indentation, remove tabs)
+
+## 3.3.8
+* More Code cleanup
+* Fix hiding of accessories
+* Bump versions of deps
