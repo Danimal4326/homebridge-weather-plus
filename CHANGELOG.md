@@ -301,11 +301,14 @@
 * Fix issue with threshold triggers and WeatherUnderground. In 3.3.4, WeatherUnderground API call was modified and incorrectly return values in km, and km/h. 
 * Fix punycode deprication warning and util._extend warning.
 * Move off depricated request package and moved to axios package for all URL loading.
-## 3.3.7
+## 3.3.6.1
 * Fixed LightLevel in WeeWX
 * Cleanup of code (indentation, remove tabs)
 
-## 3.3.8
+## 3.3.6.2
 * More Code cleanup
 * Fix hiding of accessories
 * Bump versions of deps
+
+## 3.3.6.3
+* Merge changes from naofireblade/homebridge-weather-plus
