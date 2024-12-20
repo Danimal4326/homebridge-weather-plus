@@ -42,14 +42,14 @@ function CurrentConditionsWeatherAccessory(platform, stationIndex)
 	{
 		this.CurrentConditionsService = new Service.TemperatureSensor(this.name, "Temperature");
 
-		// Separate humidity into a single service if configurated
-		if (this.config.extraHumidity)
-		{
-			this.log.debug("Separating humidity into an extra service");
-			this.HumidityService = new Service.HumiditySensor("Humidity")
-		}
-		
-		// Separate light level into a single service if configurated
+ 		// Separate humidity into a single service if configurated
+ 		if (this.config.extraHumidity)
+ 		{
+ 	 		this.log.debug("Separating humidity into an extra service");
+ 	 		this.HumidityService = new Service.HumiditySensor("Humidity")
+ 		}
+
+  		// Separate light level into a single service if configurated
 		if (this.config.extraLightLevel)
 		{
 			this.log.debug("Separating light level into an extra service");
@@ -124,6 +124,11 @@ function CurrentConditionsWeatherAccessory(platform, stationIndex)
 			else if (name === "BatteryLevel")
 			{
 				this.CurrentConditionsService.addCharacteristic(Characteristic.BatteryLevel);
+			}
+			// Battery Low is a general apple home kit characteristic
+			else if (name === "StatusLowBattery")
+			{
+				this.CurrentConditionsService.addCharacteristic(Characteristic.StatusLowBattery);
 			}
 						// Battery level is a general apple home kit characteristic
 			else if (name === "BatteryIsCharging")
