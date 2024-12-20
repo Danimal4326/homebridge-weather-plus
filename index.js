@@ -463,6 +463,9 @@ WeatherPlusPlatform.prototype = {
 			else if (name === "BatteryLevel") {
 				temperatureService.setCharacteristic(Characteristic.BatteryLevel, value);
 			}
+			else if (name === "StatusLowBattery") {
+				temperatureService.setCharacteristic(Characteristic.StatusLowBattery, value);
+			}
 			else if (name === "BatteryIsCharging") {
 				if (value == true) {
 					temperatureService.setCharacteristic(Characteristic.ChargingState, Characteristic.ChargingState.CHARGING);

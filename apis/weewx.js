@@ -185,6 +185,7 @@ class WeewxAPI
 		this.reportCharacteristics = [
 			'ObservationStation',
 			'SolarRadiation',
+			'LightLevel',
 			'RainBool',
 			'ObservationTime',
 			'UVIndex',
@@ -196,6 +197,7 @@ class WeewxAPI
 			'DewPoint',
 			'WindSpeed',
 			'WindSpeedMax',
+			"StatusLowBattery",
 			'AirPressure',
 			'Rain1h',
 			'RainDay'
@@ -286,13 +288,15 @@ class WeewxAPI
 			report.WindDirection = converter.getWindDirection(isNaN(parseInt(observation.winddir)) ? 0 : parseInt(observation.winddir));
 			report.Humidity = isNaN(observation.humidity) ? 0 : observation.humidity;
 			report.SolarRadiation = isNaN(observation.solarRadiation) ? 0 : observation.solarRadiation;
+			report.LightLevel = isNaN(observation.solarRadiation) ? 0 : ( observation.solarRadiation * 126.7 );
 			report.UVIndex = isNaN(observation.uv) ? 0 : observation.uv;
 			report.Ozone = isNaN(observation.ozone) ? 0 : observation.ozone;
 			report.Temperature = isNaN(values.temp) ? 0 : values.temp;
 			report.DewPoint = isNaN(values.dewpt) ? 0 : values.dewpt;
+			report.StatusLowBattery = isNaN(observation.batteryLow) ? 0 : observation.batteryLow;
 			report.AirPressure = isNaN(values.pressure) ? 0 : values.pressure;
 			report.TemperatureApparent = isNaN(values.apptemp) ? 0 : values.apptemp;
-      		report.WindSpeed = isNaN(values.windSpeed) ? 0 : values.windSpeed;
+			report.WindSpeed = isNaN(values.windSpeed) ? 0 : values.windSpeed;
 			report.WindSpeedMax = isNaN(values.windGust) ? 0 : values.windGust;
 			report.Rain1h = isNaN(values.rain1h) ? 0 : values.rain1h;
 			report.RainDay = isNaN(values.rainday) ? 0 : values.rainday;
