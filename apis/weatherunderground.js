@@ -1,6 +1,6 @@
 /*jshint esversion: 6,node: true,-W041: false */
 "use strict";
-const request = require('request'),
+const axios = require('axios'),
 	converter = require('../util/converter'),
 	moment = require('moment-timezone');
 
@@ -29,30 +29,25 @@ class WundergroundAPI
 
 		this.location = location;
 		this.apiKey = apiKey;
-
-		// Get observation values only in si 's' for now.
-		this.units = 's';
 	}
 
 	update(forecastDays, callback)
 	{
 		this.log.debug("Updating weather with weather underground");
 		let weather = {};
-		let that = this;
 
-		const queryUri = "https://api.weather.com/v2/pws/observations/current?apiKey=" + this.apiKey + "&stationId=" + this.location + "&format=json&units=m" + '&numericPrecision=decimal';
-		request(encodeURI(queryUri), function (err, response, body)
-		{
-			if (!err && body.length > 0)
-			{
-				// Current weather report
-				try
+		const queryUri = "https://api.weather.com/v2/pws/observations/current?apiKey=" + this.apiKey + "&stationId=" + this.location + "&format=json&units=s" + '&numericPrecision=decimal';
+
+		axios.get(encodeURI(queryUri))
+		  .then(response => {
+			if (response.data) {
+				try 
 				{
-					const jsonObj = JSON.parse(body);
+					const jsonObj = response.data;
 					if (jsonObj.errors === undefined || jsonObj.errors.length === 0)
 					{
 						this.log.debug(JSON.stringify(jsonObj, null, 2));
-						weather.report = that.parseReport(jsonObj);
+						weather.report = this.parseReport(jsonObj);
 						callback(null, weather);
 					}
 					else
@@ -61,26 +56,31 @@ class WundergroundAPI
 					}
 				} catch (e)
 				{
-					that.log.error("Error retrieving weather report and forecast");
-					that.log.error("Response Object: " + body);
-					that.log.error("Error Message: " + e);
+					this.log.error("Error retrieving weather report and forecast");
+					this.log.error("Response Object: " + response.data);
+					this.log.error("Error Message: " + e);
 					callback(e);
 				}
 			}
 			else
 			{
-				that.log.error("Weather Underground Request failed");
-				that.log.error("Error Message: " + err);
-				if (typeof response !== 'undefined') {
-					that.log.error("Response statusCode: " + response.statusCode + " statusMessage: " + response.statusMessage);
-					if (response.statusCode == 204) {
-						that.log.error("Check to make sure your PWS is not offline. https://www.wunderground.com/member/devices")
-					}
-				}
-				callback(err);
+				const error = new Error("Empty response body");
+				this.log.error(error.message);
+			  	callback(error);
 			}
-		}.bind(this));
-	}
+		  })
+		  .catch(err => {
+				this.log.error("Weather Underground Request failed");
+				this.log.error("Error Message: " + err.message);
+				if (err.response) {
+					this.log.error(`Response status: ${err.response.status} statusText: ${err.response.statusText}`);
+					if (err.response.status === 204) {
+						this.log.error("Check to make sure your PWS is not offline. https://www.wunderground.com/member/devices");
+			  		}
+				}
+			callback(err);
+		  });
+	  }
 
 	parseReport(json)
 	{
@@ -90,7 +90,7 @@ class WundergroundAPI
 		try
 		{
 			let observation = json.observations[0];
-			let values = observation.metric;
+			let values = observation.metric_si;
 
 			report.ObservationStation = observation.stationID + " : " + observation.neighborhood;
 			report.ObservationTime = moment(Date.parse(observation.obsTimeUtc)).format('HH:mm:ss');
