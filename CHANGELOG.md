@@ -311,5 +311,6 @@
 * Fix hiding of accessories
 * Bump versions of deps
 
-## 3.3.9
+## 3.3.10
 * Merge changes from naofireblade/homebridge-weather-plus
+* Fix weewx due to change to axios

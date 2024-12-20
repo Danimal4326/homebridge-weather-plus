@@ -238,15 +238,15 @@ class WeewxAPI
 					}
 				} catch (e)
 				{
-					that.log.error("Error retrieving weather report and forecast");
-					that.log.error("Error Message: " + e);
+					this.log.error("Error retrieving weather report and forecast");
+					this.log.error("Error Message: " + e);
 					callback(e);
 				}
 		    })
 		.catch(err => 
 			{
-				that.log.error("Error retrieving weather report and forecast");
-				that.log.error("Error Message: " + err);
+				this.log.error("Error retrieving weather report and forecast");
+				this.log.error("Error Message: " + err);
 				callback(err);
 			});
 	}
