@@ -229,7 +229,7 @@ class WeewxAPI
 					if (jsonObj.errors === undefined || jsonObj.errors.length === 0)
 					{
 						this.log.debug(JSON.stringify(jsonObj, null, 2));
-						weather.report = that.parseReport(jsonObj);
+						weather.report = this.parseReport(jsonObj);
 						callback(null, weather);
 					}
 					else
