@@ -44,8 +44,8 @@
     "weatherflow weather station"
   ],
   "engines": {
-    "node": ">=10.0.0",
-    "homebridge": ">=1.0.0"
+    "node": ">=10.0.0 || ^20.15.1",
+    "homebridge": ">=1.0.0 || ^2.0.0-beta.0"
   },
   "author": "Dan Chlopek (https://github.com/Danimal4326)",
   "contributors": [
@@ -114,10 +114,10 @@
     "fakegato-history": "^0.6.5",
     "geo-tz": "^6.0.0",
     "moment-timezone": "^0.5.28",
-    "underscore": "^1.13.6",
-    "request": "^2.88.2",
+    "axios": "^1.7.9",
     "weather-formulas": "^1",
-    "node-persist": "^2.1.0"
+    "node-persist": "^2.1.0",
+    "debug": "^4.4.0"
   },
   "main": "index.js",
   "bugs": {
