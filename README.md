@@ -1,10 +1,10 @@
 # homebridge-weather-plus
-[![npm](https://img.shields.io/npm/v/homebridge-weather-plus.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-weather-plus)
-[![npm](https://img.shields.io/npm/dt/homebridge-weather-plus.svg?style=flat-square)](https://www.npmjs.com/package/homebridge-weather-plus)
+[![npm](https://img.shields.io/npm/v/@danimal4326/homebridge-weather-plus.svg?style=flat-square)](https://www.npmjs.com/package/@danimal4326/homebridge-weather-plus)
+[![npm](https://img.shields.io/npm/dt/@danimal4326/homebridge-weather-plus.svg?style=flat-square)](https://www.npmjs.com/package/@danimal4326/homebridge-weather-plus)
 [![GitHub last commit](https://img.shields.io/github/last-commit/Danimal4326/homebridge-weather-plus.svg?style=flat-square)](https://github.com/Danimal4326/homebridge-weather-plus)
 [![Weather](https://img.shields.io/badge/weather-sunny-edd100.svg?style=flat-square)](https://github.com/Danimal4326/homebridge-weather-plus)
 
-This is a weather plugin for [homebridge](https://github.com/nfarina/homebridge) that features current observations, daily forecasts and history graphs for multiple locations and services. You can download it via [npm](https://www.npmjs.com/package/homebridge-weather-plus).  
+This is a weather plugin for [homebridge](https://github.com/nfarina/homebridge) that features current observations, daily forecasts and history graphs for multiple locations and services. You can download it via [npm](https://www.npmjs.com/package/@danimal4326/homebridge-weather-plus).  
 
 ![Screenshots](https://user-images.githubusercontent.com/12081369/69379083-feb05300-0caf-11ea-9a0d-cf8e1879d007.png)
 *Screenshots 2 and 3 are taken from the Elgato Eve app.*
@@ -48,7 +48,7 @@ This plugin supports multiple weather services. Each has its own advantages. The
 ## Installation
 
 1. Install homebridge using: `npm install -g homebridge`
-2. Install this plugin using: `npm install -g homebridge-weather-plus` *Note: The installation might take 5 minutes.*
+2. Install this plugin using: `npm install -g @danimal4326/homebridge-weather-plus` *Note: The installation might take 5 minutes.*
 3. Gather an API key for a weather service from the register link in the table above
 4. Configure via the plugin `homebridge-config-ui-x` or update your configuration file manually. See the explanations and samples below.
 
