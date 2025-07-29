@@ -125,6 +125,11 @@ function CurrentConditionsWeatherAccessory(platform, stationIndex)
 			{
 				this.CurrentConditionsService.addCharacteristic(Characteristic.BatteryLevel);
 			}
+			// Battery Low is a general apple home kit characteristic
+			else if (name === "StatusLowBattery")
+			{
+				this.CurrentConditionsService.addCharacteristic(Characteristic.StatusLowBattery);
+			}
 						// Battery level is a general apple home kit characteristic
 			else if (name === "BatteryIsCharging")
 			{

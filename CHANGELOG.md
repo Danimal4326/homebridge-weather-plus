@@ -300,7 +300,14 @@
 * Added support for HomeBridge 2.0
 * The fix in 3.3.4 for tile naming in Home app was not supported with HomeBridge. Add setting of Name property back for HomeBridge compatibility.
 * Fix issue with threshold triggers and WeatherUnderground. In 3.3.4, WeatherUnderground API call was modified and incorrectly return values in km, and km/h. 
-* Fix punycode deprication warning and util._extend warning.
+* Fix punycode deprication warning and util_extend warning.
 * Move off depricated request package and moved to axios package for all URL loading.
 * Ensure WeatherUnderground passes valid numbers
 * Remove reporting of failing sensors on Tempest weather station as the error status from the unit is erronous 
+
+## 3.4.1
+* Fixed LightLevel in WeeWX
+* Cleanup of code (indentation, remove tabs)
+* Fix hiding of accessories
+* Fix weewx due to change to axios
+

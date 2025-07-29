@@ -1,7 +1,7 @@
 {
-  "name": "homebridge-weather-plus",
+  "name": "@danimal4326/homebridge-weather-plus",
   "displayName": "Weather Plus",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": "A comprehensive weather plugin for homekit with current observations, forecasts and history.",
   "license": "MIT",
   "keywords": [
@@ -47,12 +47,12 @@
     "node": ">=10.0.0 || ^20.15.1",
     "homebridge": ">=1.0.0 || ^2.0.0-beta.0"
   },
-  "author": {
-    "name": "Arne Blumentritt",
-    "email": "arne.blumentritt@gmail.com",
-    "url": "https://github.com/naofireblade"
-  },
+  "author": "Dan Chlopek (https://github.com/Danimal4326)",
   "contributors": [
+    {
+      "name": "Arne Blumentritt",
+      "url": "https://github.com/naofireblade"
+    },
     {
       "name": "Kevin Harwood",
       "url": "https://github.com/kcharwood"
@@ -108,10 +108,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/naofireblade/homebridge-weather-plus.git"
+    "url": "https://github.com/Danimal4326/homebridge-weather-plus.git"
   },
   "dependencies": {
-    "fakegato-history": "^0.6.4",
+    "fakegato-history": "^0.6.5",
     "geo-tz": "^6.0.0",
     "moment-timezone": "^0.5.28",
     "axios": "^1.7.9",
@@ -119,8 +119,9 @@
     "node-persist": "^2.1.0",
     "debug": "^4.4.0"
   },
-  "funding": {
-    "type": "buymeacoffee",
-    "url": "https://buymeacoffee.com/naofireblade"
-  }
+  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/Danimal4326/homebridge-weather-plus/issues"
+  },
+  "homepage": "https://github.com/Danimal4326/homebridge-weather-plus#readme"
 }
