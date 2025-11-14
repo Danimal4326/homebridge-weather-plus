@@ -172,10 +172,12 @@
 "use strict";
 
 const axios = require('axios'),
+	axiosRetryLib = require("axios-retry"),
 	converter = require('../util/converter'),
 	geoTz = require('geo-tz'),
 	moment = require('moment-timezone');
 
+const axiosRetry = axiosRetryLib.default;
 
 class WeewxAPI
 {
@@ -219,8 +221,16 @@ class WeewxAPI
 
 		//formatting url as http://site/file.json (using apikey for URL)
 		const queryUri = this.apiKey;
-		axios.get(encodeURI(queryUri))
-        .then(response =>
+                axiosRetry( axios, {
+                    retries: 5,
+                    retryDelay: (retryCount) => retryCount * 5000,
+                    onRetry: (err) => this.log.info(`Retrying because: ${err.message}`),
+                    retryCondition: (error) => true
+                });
+
+		axios
+                    .get(encodeURI(queryUri))
+                    .then(response =>
 		    {
 			    // Current weather report
 				try
